@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const ChefCard = ({cf}) => {
 
     const {chefName, chefPicture, numberOfRecipes, yearsOfExperience, likes} = cf
-    console.log(cf);
 
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">

@@ -5,6 +5,7 @@ import Login from "../Layout/Auth/Login";
 import Register from "../Layout/Auth/Register";
 import Chef from "../Layout/Home/Chef";
 import Blog from "../Layout/Home/Blog";
+import PrivetRouts from "./PrivetRouts";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: ':id',
-                element: <Chef></Chef>,
+                element: <PrivetRouts><Chef></Chef></PrivetRouts>,
                 loader: ({params}) => fetch(`https://spice-route-server-alaminhossa1n.vercel.app/chef/${params.id}`)
             }
         ]

@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { getAuth } from "firebase/auth";
 
 
 const Login = () => {
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+
+
     const { signIn } = useContext(AuthContext)
 
     const [error, setError] = useState(null)
@@ -21,7 +26,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 form.reset();
-                console.log(loggedUser);
+                navigate(from)
                 // navigate(from, { replace: true })
             })
             .catch(error => {
@@ -49,12 +54,12 @@ const Login = () => {
 
     const handleGithub = () => {
         const provider = new GithubAuthProvider();
-       const auth = getAuth()
+        const auth = getAuth()
         signInWithPopup(auth, provider)
             .then(result => {
                 const user = result.user;
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error);
             })
 
