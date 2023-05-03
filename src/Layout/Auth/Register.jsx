@@ -10,16 +10,18 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [photoUrl, setPhotoUrl] = useState("");
+    const [error, setError] = useState(null)
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         createUser(email, password)
             .then(result => {
                 e.target.reset()
                 const createdUser = result.user;
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
 
         updateProfile(name, photoUrl)
@@ -92,6 +94,9 @@ const Register = () => {
                                 value={photoUrl}
                                 onChange={(e) => setPhotoUrl(e.target.value)}
                             />
+                            {
+                                error && <p className='text-red-600'>Password should be at least 6 characters</p>
+                            }
                         </div>
                         <div className="flex items-center justify-between">
                             <button
