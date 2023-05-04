@@ -6,11 +6,13 @@ import Register from "../Layout/Auth/Register";
 import Chef from "../Layout/Home/Chef";
 import Blog from "../Layout/Home/Blog";
 import PrivetRouts from "./PrivetRouts";
+import ErrorPage from "../Layout/Sheard/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
