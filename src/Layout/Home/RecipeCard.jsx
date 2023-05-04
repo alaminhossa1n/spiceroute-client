@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const RecipeCard = ({ recipe }) => {
+
+    const [disabled, setDisabled] = useState(false);
+
+    const handleClick = () => {
+      setDisabled(true);
+      
+  
+    };
 
     const { ingredients, cookingMethod, rating, recipeName } = recipe
     console.log(recipe);
@@ -28,6 +36,7 @@ const RecipeCard = ({ recipe }) => {
                     ingredients.map(n => <li>{n}</li>)
                 }
             </div>
+            <button className='btn border-none' onClick={handleClick} disabled={disabled}>Add to Favorite</button>
         </div>
     );
 };

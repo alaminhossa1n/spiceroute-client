@@ -17,7 +17,7 @@ const ChefCard = ({cf}) => {
             </div>
             <div className="px-6 pt-4 pb-2">
                <Link to={`/chef/${cf.id}`}>
-               <button className="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+               <button className="btn border-none">
                     View Recipes
                 </button></Link>
             </div>
