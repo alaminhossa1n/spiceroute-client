@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefCard from './ChefCard';
+import SomeRecipe from './SomeRecipe';
 
 const Home = () => {
-    const chef = useLoaderData()
+    const chef = useLoaderData();
+    const someRecipes = chef[0].recipes;
     return (
         <div className='mx-auto container'>
             <div className='md:grid grid-cols-2 border-gray-950 gap-5 items-center my-20'>
@@ -23,6 +25,22 @@ const Home = () => {
                     >
                     </ChefCard>)
                 }
+            </div>
+
+
+            <div>
+                <h2>Our Services</h2>
+            </div>
+            <div>
+                <h2 className='text-center text-6xl my-10'>Here is some Recipes</h2>
+                <div className='w-3/4 mx-auto grid grid-cols-1 gap-5'>
+                    {
+                        someRecipes.map((someRecipe, i) => <SomeRecipe
+                        key={i}
+                        someRecipe = {someRecipe}
+                        ></SomeRecipe>)
+                    }
+                </div>
             </div>
         </div>
     );

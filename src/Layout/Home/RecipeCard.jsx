@@ -8,9 +8,9 @@ const RecipeCard = ({ recipe }) => {
     console.log(recipe);
     return (
         <div className='shadow-xl p-6 rounded'>
-            <div>
+            <div className=''>
                 <h2 className='text-3xl font-semibold'>{recipeName}</h2>
-                <div className='flex gap-1 items-center'>
+                <div className='flex gap-1 items-center mt-2'>
                     <Rating
                         style={{ maxWidth: 100 }}
                         readOnly
@@ -19,11 +19,11 @@ const RecipeCard = ({ recipe }) => {
                     />
                     <p>{rating}</p>
                 </div>
-                <p><strong>Cooking Method:</strong> {cookingMethod}</p>
+                <p className='mt-6'><strong>Cooking Method:</strong> {cookingMethod}</p>
             </div>
 
-            <div>
-                <strong>Ingredients</strong>
+            <div className='mt-6'>
+                <strong className='text-lg'>Ingredients:</strong>
                 {
                     ingredients.map(n => <li>{n}</li>)
                 }
