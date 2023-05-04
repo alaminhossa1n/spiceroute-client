@@ -1,9 +1,17 @@
 import React from 'react';
 
+
 const Blog = () => {
+    const handleDownload = () => {
+        console.log('object');
+    }
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-4">Some Questions And Answer</h1>
+            <div className='flex justify-between'>
+                <h1 className="text-3xl font-bold mb-4">Some Questions And Answer</h1>
+                <button onClick={handleDownload} className='btn border-none'>Download PDF</button>
+            
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-6 rounded-md shadow-md">
                     <h2 className="text-xl font-semibold mb-4 text-violet-600">Differences between uncontrolled and controlled components</h2>
@@ -47,7 +55,7 @@ const Blog = () => {
                     <p>
                         Creating a custom hook can help reduce code duplication and make your code more readable and maintainable. For example, if you find yourself repeating the same code to fetch data from an API in multiple components, you could create a custom hook that handles the data fetching logic and returns the data to the components.
                     </p>
-<br />
+                    <br />
                     <p>
                         Custom hooks can also be used to abstract away complex logic from components and make them more focused on rendering UI elements. This can help make your components more modular and easier to test.
                     </p>
