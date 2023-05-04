@@ -11,7 +11,7 @@ const NavigationBar = () => {
         logOut();
     }
     return (
-        <div className='py-5 px-10 bg-gray-200'>
+        <div className='py-5 px-10 bg-yellow-100'>
             <div className='flex items-center justify-between'>
                 <Link to='/'>
                     <span className='text-2xl font-bold'>
