@@ -5,10 +5,9 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const NavigationBar = () => {
 
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
-    
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         logOut();
     }
     return (
@@ -41,24 +40,27 @@ const NavigationBar = () => {
 
                     {
                         !user && <li>
-                        <NavLink
-                            to='/register'
-                            className={({ isActive }) => (isActive ? 'active' : 'default')}
-                        >
-                            Register
-                        </NavLink>
-                    </li>
+                            <NavLink
+                                to='/register'
+                                className={({ isActive }) => (isActive ? 'active' : 'default')}
+                            >
+                                Register
+                            </NavLink>
+                        </li>
                     }
                 </ul>
 
                 <div className='flex items-center'>
-                    {
-                        user && <img className='h-12 w-12 rounded-full' src="https://i.ibb.co/z2xyPtD/c-5.jpg" alt="" />
-                    }
+                    <div className={user?.displayName? 'tooltip tooltip-bottom' : ''} data-tip={user?.displayName}>
+
+                        {
+                            user && <img className=" h-12 w-12 rounded-full" src="https://i.ibb.co/z2xyPtD/c-5.jpg" alt="" />
+                        }
+                    </div>
 
                     <div className='ms-3'>
                         {
-                            user? <button onClick={handleSignOut} className='btn'>Sign Out</button> : <Link to='/login'><button className='btn'>Login</button></Link>
+                            user ? <button onClick={handleSignOut} className='btn'>Sign Out</button> : <Link to='/login'><button className='btn'>Login</button></Link>
                         }
                     </div>
                 </div>
