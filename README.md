@@ -7,4 +7,7 @@ SpiceRoute is your ultimate destination to explore a vast collection of aromatic
 * You can find here world best chef.
 * Indian Food
 * Best Recipe
-* 
+* Fast Service
+* Good Quality
+
+Live Link: https://spice-route-de3a1.web.app/
