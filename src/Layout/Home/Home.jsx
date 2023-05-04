@@ -27,19 +27,38 @@ const Home = () => {
                 }
             </div>
 
-
-            <div>
-                <h2>Our Services</h2>
-            </div>
             <div>
                 <h2 className='text-center text-6xl my-10'>Here is some Recipes</h2>
                 <div className='w-3/4 mx-auto grid grid-cols-1 gap-5'>
                     {
                         someRecipes.map((someRecipe, i) => <SomeRecipe
-                        key={i}
-                        someRecipe = {someRecipe}
+                            key={i}
+                            someRecipe={someRecipe}
                         ></SomeRecipe>)
                     }
+                </div>
+            </div>
+
+            <div>
+                <h2 className='text-center text-5xl my-10'>What Customers Are Saying
+                    About Us</h2>
+                <div className='md:grid grid-cols-3 my-20'>
+
+                    <div className='text-center'>
+                        <img className='mx-auto rounded-full mb-3' width="104" height="104" src="https://alanzo.ancorathemes.com/wp-content/uploads/2017/09/testi-3-104x104.jpg"></img>
+                        <p>“Was so impressed I had to find out more and tell my friends! Last week we attended a fabulous pre-wedding afternoon party”</p>
+                        <p className='text-xl font-semibold mt-5'>James B.</p>
+                    </div>
+                    <div className='text-center'>
+                        <img className='mx-auto rounded-full mb-3' width="104" height="104" src="https://alanzo.ancorathemes.com/wp-content/uploads/2017/09/testi-1-104x104.jpg"></img>
+                        <p>“Was so impressed I had to find out more and tell my friends! Last week we attended a fabulous pre-wedding afternoon party”</p>
+                        <p className='text-xl font-semibold mt-5'>Lucinda D.</p>
+                    </div>
+                    <div className='text-center'>
+                        <img className='mx-auto rounded-full mb-3' width="104" height="104" src="https://alanzo.ancorathemes.com/wp-content/uploads/2017/09/testi-2-104x104.jpg"></img>
+                        <p>“Was so impressed I had to find out more and tell my friends! Last week we attended a fabulous pre-wedding afternoon party”</p>
+                        <p className='text-xl font-semibold mt-5'>Thomas S..</p>
+                    </div>
                 </div>
             </div>
         </div>
