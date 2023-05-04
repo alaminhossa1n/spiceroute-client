@@ -60,7 +60,7 @@ const NavigationBar = () => {
 
                     <div className='ms-3'>
                         {
-                            user ? <button onClick={handleSignOut} className='btn'>Sign Out</button> : <Link to='/login'><button className='btn'>Login</button></Link>
+                            user ? <button onClick={handleSignOut} className='btn border-none'>Sign Out</button> : <Link to='/login'><button className='btn border-none'>Login</button></Link>
                         }
                     </div>
                 </div>

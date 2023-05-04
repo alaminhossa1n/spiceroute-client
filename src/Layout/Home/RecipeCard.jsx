@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe }) => {
     };
 
     const { ingredients, cookingMethod, rating, recipeName } = recipe
-    console.log(recipe);
+
     return (
         <div className='shadow-xl p-6 rounded'>
             <div className=''>
@@ -34,7 +34,9 @@ const RecipeCard = ({ recipe }) => {
             <div className='mt-6'>
                 <strong className='text-lg'>Ingredients:</strong>
                 {
-                    ingredients.map(n => <li>{n}</li>)
+                    ingredients.map((n, i) => <li
+                        key={i}
+                    >{n}</li>)
                 }
             </div>
             <button className='btn border-none' onClick={handleClick} disabled={disabled}>Add to Favorite</button>

@@ -7,10 +7,7 @@ import { FaPizzaSlice, FaThumbsUp, FaUtensils } from "react-icons/fa";
 const Chef = () => {
     const selectedChef = useLoaderData();
     const { chefName, chefPicture, description, likes, numberOfRecipes, yearsOfExperience, recipes, rating } = selectedChef
-
-    console.log(selectedChef);
-
-
+    
     return (
         <div className='container my-28 mx-auto'>
             <div className='md:flex w-3/4 mx-auto gap-20 mb-20 items-center'>
@@ -36,11 +33,12 @@ const Chef = () => {
             </div>
 
             <div className='md:grid grid-cols-3 gap-5'>
-                    {
-                        recipes.map(recipe => <RecipeCard
-                            recipe={recipe}
-                        ></RecipeCard>)
-                    }
+                {
+                    recipes.map((recipe, i) => <RecipeCard
+                        key={i}
+                        recipe={recipe}
+                    ></RecipeCard>)
+                }
             </div>
         </div>
     );

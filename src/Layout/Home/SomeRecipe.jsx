@@ -2,7 +2,6 @@ import React from 'react';
 
 const SomeRecipe = ({ someRecipe }) => {
     const {recipeName, img} = someRecipe
-    console.log(recipeName, img);
     return (
         <div className='overflow-hidden flex items-center gap-10 shadow-xl mb-10'>
             <div>
