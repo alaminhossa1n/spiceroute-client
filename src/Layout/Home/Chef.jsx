@@ -15,7 +15,7 @@ const Chef = () => {
                     <img className='w-full rounded' src={chefPicture} alt="" />
                 </div>
                 <div className='p-10 grid grid-cols-1 gap-5 rounded shadow-2xl'>
-                    <h2 className='text-3xl font-bold'>{chefName}</h2>
+                    <h2 className='text-3xl font-bold text-green-600'>{chefName}</h2>
                     <p>{description}</p>
                     <div className='flex gap-2 items-center'>
                         <FaThumbsUp />

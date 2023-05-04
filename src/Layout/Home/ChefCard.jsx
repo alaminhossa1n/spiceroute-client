@@ -1,6 +1,7 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
+import { FaPizzaSlice, FaThumbsUp, FaUtensils } from "react-icons/fa";
 
 
 const ChefCard = ({ cf }) => {
@@ -14,10 +15,21 @@ const ChefCard = ({ cf }) => {
             </LazyLoad>
 
             <div className="px-6 py-4">
-                <p className="font-bold text-xl mb-2">{chefName}</p>
-                <p>Experience: {yearsOfExperience}</p>
-                <p>Numbers of recipes: {numberOfRecipes}</p>
-                <p>Likes: {likes} Years</p>
+                <p className="font-bold text-xl mb-2 text-green-600">{chefName}</p>
+                <div className='grid grid-cols-1 gap-3'>
+                    <div className='flex gap-2 items-center'>
+                        <FaThumbsUp />
+                        <p>{likes}+ Likes</p>
+                    </div>
+                    <div className='flex gap-2 items-center'>
+                        <FaPizzaSlice />
+                        <p>{numberOfRecipes}+ Recipes</p>
+                    </div>
+                    <div className='flex gap-2 items-center'>
+                        <FaUtensils />
+                        <p>{yearsOfExperience}+ Years of Experience</p>
+                    </div>
+                </div>
             </div>
             <div className="px-6 pt-4 pb-2">
                 <Link to={`/chef/${cf.id}`}>
