@@ -18,15 +18,15 @@ const Login = () => {
         const form = e.target
         const email = form.email.value;
         const password = form.password.value;
-        
+
         e.preventDefault();
 
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 form.reset();
-                navigate(from, {replace: true})
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
+
             })
             .catch(error => {
                 setError('Invalid Email OR Password');
@@ -38,11 +38,12 @@ const Login = () => {
 
     const handleGoogle = () => {
         const provider = new GoogleAuthProvider();
-        const auth = getAuth()
+        const auth = getAuth();
 
         signInWithPopup(auth, provider)
             .then(result => {
                 const user = result.user;
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -57,6 +58,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(result => {
                 const user = result.user;
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
