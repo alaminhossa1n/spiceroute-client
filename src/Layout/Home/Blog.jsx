@@ -1,18 +1,23 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
 
 
+const ref = React.createRef();
 const Blog = () => {
-    const handleDownload = () => {
-        console.log('object');
-    }
+
     return (
         <div className="container mx-auto px-4 py-8">
+
             <div className='flex justify-between'>
                 <h1 className="text-3xl font-bold mb-4">Some Questions And Answer</h1>
-                <button onClick={handleDownload} className='btn border-none'>Download PDF</button>
-            
+
+                <Pdf targetRef={ref} filename="code-example.pdf">
+                    {({ toPdf }) => <button className='btn  border-none' onClick={toPdf}>Generate Pdf</button>}
+                </Pdf>
+
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-6 rounded-md shadow-md">
                     <h2 className="text-xl font-semibold mb-4 text-violet-600">Differences between uncontrolled and controlled components</h2>
                     <p>
