@@ -4,6 +4,7 @@ import ChefCard from './ChefCard';
 import SomeRecipe from './SomeRecipe';
 import Lottie from 'lottie-react';
 import animationData from '../../assets/ooking-ingredients.json';
+import { FaCoffee, FaGlassCheers, FaHardHat, FaPizzaSlice } from 'react-icons/fa';
 
 
 
@@ -15,6 +16,8 @@ const Home = () => {
 
     return (
         <div className='mx-auto container'>
+
+            {/* Banner Start */}
 
             <div className='md:grid grid-cols-2 border-gray-950 gap-5 items-center'>
 
@@ -28,7 +31,44 @@ const Home = () => {
                     <p className='mt-10'>SpiceRoute is your ultimate destination to explore a vast collection of aromatic spices from around the world. Discover the secret of exotic flavors and indulge in the rich heritage of traditional spices. Our mission is to bring the finest and freshest spices to your kitchen to enhance your culinary experience. Join us on a journey of taste and flavor and discover the world of spices with SpiceRoute.</p>
                 </div>
             </div>
-            <div className='md:grid grid-cols-3 shadow gap-5 w-full mt-10'>
+
+            {/* Banner End */}
+
+            {/* Service Section start */}
+            <section className='bg-yellow-100 px-10 pt-10 pb-20 rounded-lg'>
+                <div className='mb-10'>
+                    <h2 className='text-center text-5xl'>You Will Find</h2>
+                </div>
+                <div className=' grid md:grid-cols-4 gap-5'>
+                    <div className='shadow p-5 bg-white hover:bg-yellow-200 rounded-xl w-3/4 md:w-full mx-auto'>
+                        <p className='text-7xl text-green-600 mb-3'><FaCoffee /></p>
+                        <h3 className='text-2xl font-medium'>Good Quality</h3>
+                        <p>Nothing But the Finest</p>
+                    </div>
+                    <div className='shadow p-5 bg-white hover:bg-yellow-200 rounded-xl w-3/4 md:w-full mx-auto'>
+                        <p className='text-7xl text-green-600 mb-3'><FaPizzaSlice /></p>
+                        <h3 className='text-2xl font-medium'>Fresh Food</h3>
+                        <p>Taste the Season's Best</p>
+                    </div>
+                    <div className='shadow p-5 bg-white hover:bg-yellow-200 rounded-xl w-3/4 md:w-full mx-auto'>
+                        <p className='text-7xl text-green-600 mb-3'><FaHardHat /></p>
+                        <h3 className='text-2xl font-medium'>Best Chef</h3>
+                        <p>Artistry on a Plate</p>
+                    </div>
+                    <div className='shadow p-5 bg-white hover:bg-yellow-200 rounded-xl w-3/4 md:w-full mx-auto'>
+                        <p className='text-7xl text-green-600 mb-3'><FaGlassCheers /></p>
+                        <h3 className='text-2xl font-medium'>Unique Flavors</h3>
+                        <p>Bold & Unforgettable Tastes</p>
+                    </div>
+                </div>
+            </section>
+            {/* Service Section End */}
+
+            {/* chef Card start */}
+            <div>
+                <h2 className='text-center text-5xl my-10'>Here is Our Chef</h2>
+            </div>
+            <div className='md:grid grid-cols-3 gap-5 w-full'>
                 {
                     chef.map(cf => <ChefCard
                         key={cf.id}
@@ -38,17 +78,8 @@ const Home = () => {
                 }
             </div>
 
-            <div>
-                <h2 className='text-center text-6xl my-10'>Here is some Recipes</h2>
-                <div className='w-3/4 mx-auto grid grid-cols-1 gap-5'>
-                    {
-                        someRecipes.map((someRecipe, i) => <SomeRecipe
-                            key={i}
-                            someRecipe={someRecipe}
-                        ></SomeRecipe>)
-                    }
-                </div>
-            </div>
+            {/* chef card end */}
+
 
             <div>
                 <h2 className='text-center text-5xl my-10'>What Customers Are Saying

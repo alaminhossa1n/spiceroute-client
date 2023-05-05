@@ -9,9 +9,9 @@ const ChefCard = ({ cf }) => {
     const { chefName, chefPicture, numberOfRecipes, yearsOfExperience, likes } = cf
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="rounded shadow-lg">
             <LazyLoad threshold={0.95}>
-                <img className="w-full" src={chefPicture} alt="Random" />
+                <img className="w-full p-3 md:p-0 rounded" src={chefPicture} alt="Random" />
             </LazyLoad>
 
             <div className="px-6 py-4">
