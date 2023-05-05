@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
 
-    const { createUser, updateProfile } = useContext(AuthContext)
+    const { createUser, updateProfile } = useContext(AuthContext);
+    const navigate = useNavigate()
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -19,6 +20,8 @@ const Register = () => {
             .then(result => {
                 e.target.reset()
                 const createdUser = result.user;
+                navigate('/');
+
             })
             .catch(error => {
                 setError(error.message);
@@ -100,7 +103,7 @@ const Register = () => {
                         </div>
                         <div className="flex items-center justify-between">
                             <button
-                                className=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                className="btn border-none"
                                 type="submit"
                             >
                                 Register
