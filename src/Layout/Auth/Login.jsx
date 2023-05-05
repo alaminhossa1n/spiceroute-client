@@ -87,6 +87,7 @@ const Login = () => {
                             type="email"
                             className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             name='email'
+                            required
                         />
                     </div>
                     <div className="mb-2">
@@ -100,6 +101,7 @@ const Login = () => {
                             type="password"
                             className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             name='password'
+                            required
                         />
                     </div>
 
