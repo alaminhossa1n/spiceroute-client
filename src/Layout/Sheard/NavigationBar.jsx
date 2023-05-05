@@ -24,7 +24,7 @@ const NavigationBar = () => {
 
                     <Link to='/'>
                         <p className='text-2xl font-bold'>
-                            <span className='text-green-600'>Spice</span><span className='text-yellow-500'>Route</span>
+                            <span className='text-green-600'>Spice</span><span className='text-blue-500'>Route</span>
                         </p>
                     </Link>
                 </div>

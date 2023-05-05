@@ -43,7 +43,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(result => {
                 const user = result.user;
-                navigate(from, { replace: true })
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
@@ -58,7 +58,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(result => {
                 const user = result.user;
-                navigate(from, { replace: true })
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);

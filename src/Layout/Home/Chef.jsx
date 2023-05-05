@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaPizzaSlice, FaThumbsUp, FaUtensils } from "react-icons/fa";
+import RecipeCard from './RecipeCard';
 
 
 const Chef = () => {
     const selectedChef = useLoaderData();
     const { chefName, chefPicture, description, likes, numberOfRecipes, yearsOfExperience, recipes, rating } = selectedChef
-    
+
     return (
         <div className='container my-28 mx-auto'>
             <div className='md:flex w-3/4 mx-auto gap-20 mb-20 items-center'>
@@ -29,6 +30,15 @@ const Chef = () => {
                         <p>{yearsOfExperience}+ Years of Experience</p>
                     </div>
                 </div>
+            </div>
+
+            <div className='md:grid grid-cols-3 gap-5'>
+                {
+                    recipes.map((recipe, i) => <RecipeCard
+                        key={i}
+                        recipe={recipe}
+                    ></RecipeCard>)
+                }
             </div>
 
         </div>

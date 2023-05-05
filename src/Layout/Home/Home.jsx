@@ -9,14 +9,12 @@ const Home = () => {
 
     const chef = useLoaderData();
 
-    const someRecipes = chef[0].recipes;
-
     return (
         <div className='mx-auto container'>
 
             {/* Banner Start */}
 
-            <div className='md:grid grid-cols-2 border-gray-950 gap-5 items-center'>
+            <div className='md:grid grid-cols-2 my-10 border-gray-950 gap-5 items-center'>
 
                 <Lottie
                     animationData={animationData}
@@ -78,7 +76,7 @@ const Home = () => {
             {/* chef card end */}
 
 
-            <div>
+            <div className='p-5'>
                 <h2 className='text-center text-5xl my-10'>What Customers Are Saying
                     About Us</h2>
                 <div className='md:grid grid-cols-3 my-20'>
