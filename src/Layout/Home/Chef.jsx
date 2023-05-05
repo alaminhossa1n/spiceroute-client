@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import RecipeCard from './RecipeCard';
 import { FaPizzaSlice, FaThumbsUp, FaUtensils } from "react-icons/fa";
 
 
@@ -32,14 +31,6 @@ const Chef = () => {
                 </div>
             </div>
 
-            <div className='md:grid grid-cols-3 gap-5'>
-                {
-                    recipes.map((recipe, i) => <RecipeCard
-                        key={i}
-                        recipe={recipe}
-                    ></RecipeCard>)
-                }
-            </div>
         </div>
     );
 };

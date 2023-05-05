@@ -1,12 +1,9 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefCard from './ChefCard';
-import SomeRecipe from './SomeRecipe';
 import Lottie from 'lottie-react';
-import animationData from '../../assets/ooking-ingredients.json';
+import animationData from '../../assets/cooking-ingredients.json';
 import { FaCoffee, FaGlassCheers, FaHardHat, FaPizzaSlice } from 'react-icons/fa';
-
-
 
 const Home = () => {
 
