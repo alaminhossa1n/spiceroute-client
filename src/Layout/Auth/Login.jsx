@@ -18,8 +18,7 @@ const Login = () => {
         const form = e.target
         const email = form.email.value;
         const password = form.password.value;
-
-        console.log(email, password);
+        
         e.preventDefault();
 
         signIn(email, password)

@@ -54,7 +54,7 @@ const NavigationBar = () => {
                     <div className={user?.displayName? 'tooltip tooltip-bottom' : ''} data-tip={user?.displayName}>
 
                         {
-                            user && <img className=" h-12 w-12 rounded-full" src="https://i.ibb.co/z2xyPtD/c-5.jpg" alt="" />
+                            user && <img className=" h-12 w-12 rounded-full" src={user.photoURL} alt="" />
                         }
                     </div>
 

@@ -4,14 +4,15 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
 
-    const { createUser, updateProfile } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const { createUser, profileUpdate } = useContext(AuthContext);
+    const navigate = useNavigate();
+
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [photoUrl, setPhotoUrl] = useState("");
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,19 +23,24 @@ const Register = () => {
                 const createdUser = result.user;
                 navigate('/');
 
+                profileUpdate(createdUser, {
+                    displayName: `${name}`, photoURL: `${photoUrl}`
+                })
+                    .then(() => {
+                        
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+
             })
             .catch(error => {
                 setError(error.message);
             })
 
-        updateProfile(name, photoUrl)
-            .then(() => {
-
-            })
-            .catch(error => {
-                console.log(error);
-            })
     };
+
+
 
 
     return (
